@@ -1,0 +1,157 @@
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-color: rgba(#FFF, 0.7);
+}
+
+.lightbox-image {
+  position: fixed;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    left: 22px;
+    content: ' ';
+    height: 50px;
+    width: 2px;
+    background-color: #333;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+}
+
+.lightbox-btn {
+  position: fixed;
+  top: 50%;
+  width: 50px;
+  height: 90px;
+  margin-top: -40px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: #444;
+  background-color: rgba(#000, 0.5);
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    animation: lightbox-loading .5s ease infinite;
+  }
+}
+
+.lightbox-fade-enter-active, .lightbox-fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.lightbox-fade-enter, .lightbox-fade-leave-active {
+  opacity: 0;
+}
+
+@keyframes lightbox-loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+
+.lightbox-enter-enter-active, .lightbox-enter-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+
+.lightbox-enter-enter {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.lightbox-enter-leave-active {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+i.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 15px;
+  cursor: pointer;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
